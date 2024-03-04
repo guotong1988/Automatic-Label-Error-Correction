@@ -111,7 +111,7 @@ training_args = TrainingArguments(
     num_train_epochs=1
 )
 
-metric = load_metric("my_accuracy.py")
+metric = load_metric("common/my_accuracy.py")
 
 def compute_metrics(p: EvalPrediction):
     preds = p.predictions[0] if isinstance(p.predictions, tuple) else p.predictions
