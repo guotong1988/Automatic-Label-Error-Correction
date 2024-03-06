@@ -1,4 +1,4 @@
-# Automatic-Label-Error-Correction
+# Automatic Label Error Correction
 https://guotong1988.github.io/core_research/2024/02/01/auto-re-label/
 
 # Requirement
