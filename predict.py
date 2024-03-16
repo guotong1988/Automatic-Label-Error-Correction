@@ -2,8 +2,6 @@ import transformers
 import numpy as np
 import os
 
-from datasets import load_metric
-
 print(transformers.__version__)
 
 from datasets import load_dataset
@@ -114,8 +112,15 @@ trainer = Trainer(
     tokenizer=tokenizer)
 
 trainer._load_from_checkpoint("my_checkpoint")
+
 predict_label_ids = trainer.predict(test_dataset=dev_dataset).label_ids
 
-f_predict = open("predict.txt", encoding="utf-8", mode="w")
+f_predict = open("predict_testdata.txt", encoding="utf-8", mode="w")
+for one in predict_label_ids:
+    f_predict.write(id2label[one] + "\n")
+
+predict_label_ids = trainer.predict(test_dataset=train_dataset).label_ids
+
+f_predict = open("predict_traindata.txt", encoding="utf-8", mode="w")
 for one in predict_label_ids:
     f_predict.write(id2label[one] + "\n")

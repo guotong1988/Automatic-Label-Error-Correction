@@ -10,7 +10,11 @@ from datasets import load_dataset
 
 from transformers import AutoConfig, AutoModelForSequenceClassification
 
-for the_seed in range(5):
+f_result = open("explore_result.txt", encoding="utf-8", mode="w")
+
+seed_count = 50
+
+for the_seed in range(seed_count):
     checkpoint_local = "bert-base-uncased/"
     # 从本地读取config
     config = AutoConfig.from_pretrained(checkpoint_local)
@@ -114,5 +118,7 @@ for the_seed in range(5):
 
     metrics = trainer.evaluate(eval_dataset=dev_dataset)
 
-    print(the_seed, metrics)
-
+    print("index", the_seed)
+    print("eval_accuracy", metrics["eval_accuracy"])
+    print("eval_loss", metrics["eval_loss"])
+    f_result.write(str(the_seed) + "\t" + str(metrics["eval_accuracy"]) + "\t" + str(metrics["eval_loss"]) + "\n")

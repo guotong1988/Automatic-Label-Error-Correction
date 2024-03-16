@@ -11,8 +11,8 @@ for tmp in ["test", "train"]:
         origin_labels.append(one.strip().split(":")[0])
         input_list.append(one.strip().split(":")[1])
 
-    for the_seed in range(5):
-        random.seed(the_seed)
+    seed_count = 50
+    for the_seed in range(seed_count):
         f_rand = open("data/explore_data/" + tmp + str(the_seed) + ".txt", encoding="utf-8", mode="w")
 
         for i in range(len(predict_labels)):
