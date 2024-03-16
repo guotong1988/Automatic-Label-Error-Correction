@@ -122,3 +122,5 @@ for the_seed in range(seed_count):
     print("eval_accuracy", metrics["eval_accuracy"])
     print("eval_loss", metrics["eval_loss"])
     f_result.write(str(the_seed) + "\t" + str(metrics["eval_accuracy"]) + "\t" + str(metrics["eval_loss"]) + "\n")
+    f_result.flush()
+f_result.close()
