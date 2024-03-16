@@ -14,7 +14,7 @@ f_result = open("explore_result.txt", encoding="utf-8", mode="w")
 
 seed_count = 50
 
-for the_seed in range(seed_count):
+for index in range(seed_count):
     checkpoint_local = "bert-base-uncased/"
     # 从本地读取config
     config = AutoConfig.from_pretrained(checkpoint_local)
@@ -27,9 +27,9 @@ for the_seed in range(seed_count):
 
     model = AutoModelForSequenceClassification.from_config(config)
 
-    input_data_train = load_dataset("data/explore_data", data_files="train" + str(the_seed) + ".txt")
+    input_data_train = load_dataset("data/explore_data", data_files="train" + str(index) + ".txt")
 
-    input_data_dev = load_dataset("data/explore_data", data_files="test" + str(the_seed) + ".txt")
+    input_data_dev = load_dataset("data/explore_data", data_files="test" + str(index) + ".txt")
 
     from transformers import AutoTokenizer
 
@@ -118,9 +118,9 @@ for the_seed in range(seed_count):
 
     metrics = trainer.evaluate(eval_dataset=dev_dataset)
 
-    print("index", the_seed)
+    print("index", index)
     print("eval_accuracy", metrics["eval_accuracy"])
     print("eval_loss", metrics["eval_loss"])
-    f_result.write(str(the_seed) + "\t" + str(metrics["eval_accuracy"]) + "\t" + str(metrics["eval_loss"]) + "\n")
+    f_result.write(str(index) + "\t" + str(metrics["eval_accuracy"]) + "\t" + str(metrics["eval_loss"]) + "\n")
     f_result.flush()
 f_result.close()
