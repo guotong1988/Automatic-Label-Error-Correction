@@ -14,9 +14,9 @@ Step-4, `explore_train.py`
 
 # Requirement
 
-transformers            4.38.2
+transformers            4.38.2 or 4.26.1
 
-torch                   2.2.1
+torch                   2.2.1 or 1.11.0
 
 scikit-learn            1.3.2
 
