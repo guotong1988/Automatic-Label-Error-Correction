@@ -1,7 +1,19 @@
 # Automatic Label Error Correction
 https://guotong1988.github.io/core_research/2024/02/01/auto-re-label/
 
+# Run
+
+Step-1, `train.py`
+
+Step-2, `predict.py`
+
+Step-3, `get_dataset_list.py`
+
+Step-4, `explore_train.py`
+
+
 # Requirement
+
 transformers            4.38.2
 
 torch                   2.2.1
