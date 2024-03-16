@@ -113,14 +113,14 @@ trainer = Trainer(
 
 trainer._load_from_checkpoint("my_checkpoint")
 
-predict_label_ids = trainer.predict(test_dataset=dev_dataset).label_ids
+predict_label_ids = trainer.predict(test_dataset=dev_dataset).predictions
 
 f_predict = open("predict_testdata.txt", encoding="utf-8", mode="w")
 for one in predict_label_ids:
-    f_predict.write(id2label[one] + "\n")
+    f_predict.write(id2label[np.argmax(one).item()] + "\n")
 
-predict_label_ids = trainer.predict(test_dataset=train_dataset).label_ids
+predict_label_ids = trainer.predict(test_dataset=train_dataset).predictions
 
 f_predict = open("predict_traindata.txt", encoding="utf-8", mode="w")
 for one in predict_label_ids:
-    f_predict.write(id2label[one] + "\n")
+    f_predict.write(id2label[np.argmax(one).item()] + "\n")
