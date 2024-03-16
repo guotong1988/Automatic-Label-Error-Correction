@@ -3,6 +3,7 @@ import numpy as np
 import os
 
 from datasets import load_metric
+
 print(transformers.__version__)
 
 from datasets import load_dataset
@@ -16,10 +17,10 @@ checkpoint_local = "bert-base-uncased/"
 config = AutoConfig.from_pretrained(checkpoint_local)
 label2id = {}
 f = open("data/label.data", encoding="utf-8", mode="r")
-for i,line in enumerate(f):
+for i, line in enumerate(f):
     label2id[line.strip()] = i
 
-config.num_labels = len(label2id) # 很重要
+config.num_labels = len(label2id)  # 很重要
 
 model = AutoModelForSequenceClassification.from_config(config)
 
@@ -30,10 +31,7 @@ input_data_dev = load_dataset("data", data_files="test.txt")
 for i in range(0, 10):
     print(input_data_train["train"][i])
 
-
-
 from transformers import AutoTokenizer
-
 
 if os.path.exists(checkpoint_local + "tokenizer.json"):
     tokenizer = AutoTokenizer.from_pretrained(
@@ -62,8 +60,6 @@ def preprocess_function(examples):
     return model_inputs
 
 
-
-
 tokenized_datasets_train = input_data_train.map(preprocess_function, batched=True, num_proc=4, batch_size=100,
                                                 remove_columns=["text"])
 tokenized_datasets_dev = input_data_dev.map(preprocess_function, batched=True, num_proc=4, batch_size=100,
@@ -77,8 +73,6 @@ for i in range(0, 10):
 
 print()
 
-
-
 from transformers import TrainingArguments
 
 training_args = TrainingArguments(
@@ -90,7 +84,6 @@ training_args = TrainingArguments(
     push_to_hub=False,
     num_train_epochs=1
 )
-
 
 train_dataset = tokenized_datasets_train["train"]
 
@@ -112,6 +105,7 @@ training_args = TrainingArguments(
 )
 
 metric = load_metric("common/my_accuracy.py")
+
 
 def compute_metrics(p: EvalPrediction):
     preds = p.predictions[0] if isinstance(p.predictions, tuple) else p.predictions
