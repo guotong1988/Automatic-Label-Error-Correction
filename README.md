@@ -3,13 +3,13 @@ https://guotong1988.github.io/core_research/2024/02/01/auto-re-label/
 
 # Run
 
-Step-1, `train.py`
+Step-1, Train the model, `train.py`
 
-Step-2, `predict.py`
+Step-2, Predict the datasets itself, `predict.py`
 
-Step-3, `get_dataset_list.py`
+Step-3, Prepare the candidate datasets, `get_dataset_list.py`
 
-Step-4, `explore_train.py`
+Step-4, Find the best dataset, `explore_train.py`
 
 
 # Requirement
