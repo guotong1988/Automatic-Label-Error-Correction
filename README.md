@@ -7,9 +7,9 @@ Step-1, Train the model, `train.py`
 
 Step-2, Predict the train/dev datasets, `predict.py`
 
-Step-3, Prepare the candidate datasets, `get_dataset_list.py`
+Step-3, Prepare the candidate training datasets, `get_dataset_list.py`
 
-Step-4, Find the best dataset, `explore_train.py`
+Step-4, Find the best dataset by dev accuracy, `explore_train.py`
 
 
 # Requirement
