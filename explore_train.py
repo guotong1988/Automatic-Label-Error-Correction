@@ -128,7 +128,7 @@ for index in range(seed_count):
     if metrics["eval_accuracy"] > max_score:
         max_score = metrics["eval_accuracy"]
         max_index = index
-    f_result.write("max_score " + str(max_score) + " max_index " + str(max_index))
+    f_result.write("max_score " + str(max_score) + " max_index " + str(max_index) + "\n")
     f_result.flush()
 f_result.close()
 
