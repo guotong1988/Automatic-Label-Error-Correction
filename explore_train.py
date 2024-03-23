@@ -124,11 +124,12 @@ for index in range(seed_count):
     print("eval_accuracy", metrics["eval_accuracy"])
     print("eval_loss", metrics["eval_loss"])
     f_result.write(str(index) + "\t" + str(metrics["eval_accuracy"]) + "\t" + str(metrics["eval_loss"]) + "\n")
-    f_result.flush()
 
     if metrics["eval_accuracy"] > max_score:
         max_score = metrics["eval_accuracy"]
         max_index = index
+    f_result.write("max_score " + str(max_score) + " max_index " + str(max_index))
+    f_result.flush()
 f_result.close()
 
 print("max_score", max_score)
