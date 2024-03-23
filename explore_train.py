@@ -13,6 +13,8 @@ from transformers import AutoConfig, AutoModelForSequenceClassification
 f_result = open("explore_result.txt", encoding="utf-8", mode="w")
 
 seed_count = 50
+max_index = -1
+max_score = -1
 
 for index in range(seed_count):
     checkpoint_local = "bert-base-uncased/"
@@ -123,4 +125,11 @@ for index in range(seed_count):
     print("eval_loss", metrics["eval_loss"])
     f_result.write(str(index) + "\t" + str(metrics["eval_accuracy"]) + "\t" + str(metrics["eval_loss"]) + "\n")
     f_result.flush()
+
+    if metrics["eval_accuracy"] > max_score:
+        max_score = metrics["eval_accuracy"]
+        max_index = index
 f_result.close()
+
+print("max_score", max_score)
+print("max_index", max_index)
