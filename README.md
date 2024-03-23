@@ -5,7 +5,7 @@ https://guotong1988.github.io/core_research/2024/02/01/auto-re-label/
 
 Step-1, Train the model, `train.py`
 
-Step-2, Predict the datasets itself, `predict.py`
+Step-2, Predict the train/dev datasets, `predict.py`
 
 Step-3, Prepare the candidate datasets, `get_dataset_list.py`
 
