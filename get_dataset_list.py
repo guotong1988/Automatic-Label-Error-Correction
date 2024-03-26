@@ -11,7 +11,7 @@ for tmp in ["test", "train"]:
         origin_labels.append(one.strip().split(":")[0])
         input_list.append(one.strip().split(":")[1])
 
-    seed_count = 5
+    seed_count = 100000
     for index in range(seed_count):
         f_rand = open("data/explore_data/" + tmp + str(index) + ".txt", encoding="utf-8", mode="w")
         tmp_count = 0
