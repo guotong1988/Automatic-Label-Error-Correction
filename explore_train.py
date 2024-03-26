@@ -12,7 +12,7 @@ from transformers import AutoConfig, AutoModelForSequenceClassification
 
 f_result = open("explore_result.txt", encoding="utf-8", mode="w")
 
-seed_count = 50
+seed_count = 100000
 max_index = -1
 max_score = -1
 
