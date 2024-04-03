@@ -24,9 +24,9 @@ config.num_labels = len(label2id)  # 很重要
 
 model = AutoModelForSequenceClassification.from_config(config)
 
-input_data_train = load_dataset("data", data_files="train.txt")
+input_data_train = load_dataset("data", data_files="train_origin.txt")
 
-input_data_dev = load_dataset("data", data_files="test.txt")
+input_data_dev = load_dataset("data", data_files="test_origin.txt")
 
 for i in range(0, 10):
     print(input_data_train["train"][i])
