@@ -1,5 +1,7 @@
 # Automatic Label Error Correction Without Human Labor
 
+[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+
 https://guotong1988.github.io/core_research/2024/02/01/auto-re-label/
 
 # Run
