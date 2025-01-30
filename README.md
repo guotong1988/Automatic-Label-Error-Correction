@@ -33,3 +33,9 @@ accelerate              0.27.2
 ![table1](https://guotong1988.github.io/assets/png/auto-relabel/table1.png)
 
 ![table1](https://guotong1988.github.io/assets/png/auto-relabel/table2.png)
+
+# Relate Work
+
+Label Error Correction With Human Labor: [The Re-Label Method For Data-Centric Machine Learning](https://arxiv.org/abs/2302.04391) 
+
+Controllable Label Error Fixing: [Re-Label By Data Pattern For Controllable Deep Learning](https://www.techrxiv.org/users/679328/articles/679640)
