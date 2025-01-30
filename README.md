@@ -44,4 +44,4 @@ Controllable Label Error Fixing: [Re-Label By Data Pattern For Controllable Deep
 
 # More Info
 
-The method proposed in this project (and its relate works) can be applied to all manually annotated deep learning tasks, not just NLP tasks, but can be efficiently extended to CV tasks, speech recognition tasks, text-to-speech tasks, and more.
+The method proposed in this project (and its relate works) can be applied to all manually annotated (or dataset by LLMs) deep learning tasks, not just NLP tasks, but can be efficiently extended to CV tasks, speech recognition tasks, text-to-speech tasks, and more.
