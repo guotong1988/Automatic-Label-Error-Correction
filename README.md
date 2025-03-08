@@ -42,6 +42,8 @@ Label Error Correction With Human Labor: [The Re-Label Method For Data-Centric M
 
 Controllable Label Error Fixing: [Re-Label By Data Pattern For Controllable Deep Learning](https://www.techrxiv.org/users/679328/articles/679640)
 
+Apply To LLMs: [Simple Self-Eval-Drop for Leveraging LLMs](https://guotong1988.github.io/research/2024/09/01/self-drop-for-use-llm/), [Self-Refine Learning For Cleaning LLMs Data](https://guotong1988.github.io/research/2024/12/31/self-refine-use-llm/)
+
 # More Info
 
 The method proposed in this project (and its related works) can be applied to all manually annotated (or dataset by LLMs) deep learning tasks, not just NLP tasks, but can be efficiently extended to CV tasks, speech recognition tasks, text-to-speech tasks, and more.
