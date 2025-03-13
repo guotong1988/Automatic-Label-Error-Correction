@@ -46,4 +46,6 @@ Apply To LLMs: [Simple Self-Eval-Drop for Leveraging LLMs](https://guotong1988.g
 
 # More Info
 
-The method proposed in this project (and its related works) can be applied to all manually annotated (or dataset by LLMs) deep learning tasks, not just NLP tasks, but can be efficiently extended to computer vision tasks, speech recognition tasks, text-to-speech tasks, and more.
+The method proposed in this project (and its related works) can be applied to all manually annotated (or dataset by LLMs) deep learning tasks. Not only NLP tasks, but can also be efficiently extended to computer vision tasks, speech recognition tasks, text-to-speech tasks, and more.
+
+
