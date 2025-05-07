@@ -42,7 +42,7 @@ Label Error Correction With Human Labor: [The Re-Label Method For Data-Centric M
 
 Controllable Label Error Fixing: [Re-Label By Data Pattern For Controllable Deep Learning](https://www.techrxiv.org/users/679328/articles/679640)
 
-Apply To LLMs: [Simple Self-Eval-Drop for Leveraging LLMs](https://guotong1988.github.io/research/2024/09/01/self-drop-for-use-llm/), [Drop Noise For Cleaning LLMs Data](https://guotong1988.github.io/research/2024/12/31/drop-noise-for-llm/)
+Apply To LLMs: [Simple Self-Eval-Drop for Leveraging LLMs](https://www.techrxiv.org/users/679328/articles/1221820), [Drop Noise For Cleaning LLMs Data](https://www.techrxiv.org/users/679328/articles/1256798)
 
 # More Info
 
