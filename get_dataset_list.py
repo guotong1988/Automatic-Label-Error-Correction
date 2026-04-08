@@ -7,7 +7,7 @@ for tmp in ["test", "train"]:
 
     origin_labels = []
     input_list = []
-    for one in open("data/" + tmp + ".txt", encoding="utf-8", mode="r"):
+    for one in open("data/" + tmp + "_origin.txt", encoding="utf-8", mode="r"):
         origin_labels.append(one.strip().split(":")[0])
         input_list.append(one.strip().split(":")[1])
 
