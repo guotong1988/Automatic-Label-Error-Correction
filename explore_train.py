@@ -2,7 +2,9 @@ import transformers
 import numpy as np
 import os
 
-from datasets import load_metric
+import evaluate
+
+os.environ["WANDB_DISABLED"] = "true"
 
 print(transformers.__version__)
 
@@ -12,12 +14,12 @@ from transformers import AutoConfig, AutoModelForSequenceClassification
 
 f_result = open("explore_result.txt", encoding="utf-8", mode="w")
 
-seed_count = 100000
+seed_count = 1000
 max_index = -1
 max_score = -1
 
 for index in range(seed_count):
-    checkpoint_local = "bert-base-uncased/"
+    checkpoint_local = "./bert-base-uncased/"
     # 从本地读取config
     config = AutoConfig.from_pretrained(checkpoint_local)
     label2id = {}
@@ -31,7 +33,7 @@ for index in range(seed_count):
 
     input_data_train = load_dataset("data/explore_data", data_files="train" + str(index) + ".txt")
 
-    input_data_dev = load_dataset("data/explore_data", data_files="test" + str(index) + ".txt")
+    input_data_dev = load_dataset("data/", data_files="test.txt")
 
     from transformers import AutoTokenizer
 
@@ -72,7 +74,7 @@ for index in range(seed_count):
 
     training_args = TrainingArguments(
         output_dir=checkpoint_local,
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         learning_rate=2e-5,
         weight_decay=0.01,
         save_strategy="epoch",
@@ -91,7 +93,7 @@ for index in range(seed_count):
 
     training_args = TrainingArguments(
         output_dir=checkpoint_local,
-        evaluation_strategy="epoch",
+        eval_strategy="epoch",
         learning_rate=2e-5,
         weight_decay=0.01,
         save_strategy="epoch",
@@ -99,7 +101,7 @@ for index in range(seed_count):
         num_train_epochs=1
     )
 
-    metric = load_metric("common/my_accuracy.py")
+    metric = evaluate.load("accuracy")
 
     def compute_metrics(p: EvalPrediction):
         preds = p.predictions[0] if isinstance(p.predictions, tuple) else p.predictions
