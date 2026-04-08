@@ -33,7 +33,8 @@ for index in range(seed_count):
 
     input_data_train = load_dataset("data/explore_data", data_files="train" + str(index) + ".txt")
 
-    input_data_dev = load_dataset("data/", data_files="test.txt")
+    input_data_dev = load_dataset("data/", data_files="test_origin.txt")
+    # input_data_dev = load_dataset("data/explore_data", data_files="test" + str(index) + ".txt")
 
     from transformers import AutoTokenizer
 
