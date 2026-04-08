@@ -2,7 +2,9 @@ import transformers
 import numpy as np
 import os
 
-from datasets import load_metric
+import evaluate
+
+os.environ["WANDB_DISABLED"] = "true"
 
 print(transformers.__version__)
 
@@ -77,10 +79,11 @@ from transformers import TrainingArguments
 
 training_args = TrainingArguments(
     output_dir=checkpoint_local,
-    evaluation_strategy="epoch",
+    eval_strategy="epoch",
     learning_rate=2e-5,
     weight_decay=0.01,
     save_strategy="epoch",
+    report_to="none",
     push_to_hub=False,
     num_train_epochs=1
 )
@@ -96,15 +99,16 @@ from transformers import EvalPrediction, Trainer, TrainingArguments
 
 training_args = TrainingArguments(
     output_dir=checkpoint_local,
-    evaluation_strategy="epoch",
+    eval_strategy="epoch",
     learning_rate=2e-5,
     weight_decay=0.01,
     save_strategy="epoch",
+    report_to="none",
     push_to_hub=False,
     num_train_epochs=1
 )
 
-metric = load_metric("common/my_accuracy.py")
+metric = evaluate.load("accuracy")
 
 
 def compute_metrics(p: EvalPrediction):
