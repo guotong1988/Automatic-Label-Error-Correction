@@ -3,7 +3,7 @@ import numpy as np
 import os
 
 print(transformers.__version__)
-
+os.environ["WANDB_DISABLED"] = "true"
 from datasets import load_dataset
 
 from transformers import AutoConfig, AutoModelForSequenceClassification
@@ -24,9 +24,9 @@ config.num_labels = len(label2id)  # 很重要
 
 model = AutoModelForSequenceClassification.from_config(config)
 
-input_data_train = load_dataset("data", data_files="train.txt")
+input_data_train = load_dataset("data", data_files="train_origin.txt")
 
-input_data_dev = load_dataset("data", data_files="test.txt")
+input_data_dev = load_dataset("data", data_files="test_origin.txt")
 
 for i in range(0, 10):
     print(input_data_train["train"][i])
@@ -77,7 +77,7 @@ from transformers import TrainingArguments
 
 training_args = TrainingArguments(
     output_dir=checkpoint_local,
-    evaluation_strategy="epoch",
+    eval_strategy="epoch",
     learning_rate=2e-5,
     weight_decay=0.01,
     save_strategy="epoch",
@@ -96,7 +96,7 @@ from transformers import Trainer, TrainingArguments
 
 training_args = TrainingArguments(
     output_dir=checkpoint_local,
-    evaluation_strategy="epoch",
+    eval_strategy="epoch",
     learning_rate=2e-5,
     weight_decay=0.01,
     save_strategy="epoch",
