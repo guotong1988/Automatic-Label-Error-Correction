@@ -40,10 +40,6 @@ accelerate              0.27.2
 
 Label Error Correction With Human Labor: [The Re-Label Method For Data-Centric Machine Learning](https://arxiv.org/abs/2302.04391) 
 
-Controllable Label Error Fixing: [Re-Label By Data Pattern For Controllable Deep Learning](https://www.techrxiv.org/users/679328/articles/679640)
-
-Apply To LLMs: [Simple Self-Eval-Drop for Leveraging LLMs](https://www.techrxiv.org/users/679328/articles/1221820), [Drop Noise For Cleaning LLMs Data](https://www.techrxiv.org/users/679328/articles/1256798)
-
 Using LLMs To Re-Label: [A Unified Framework for NLP Tasks by ReLabel Method](https://www.techrxiv.org/users/679328/articles/1353479)
 
 # More Info
