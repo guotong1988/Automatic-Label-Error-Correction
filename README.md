@@ -44,6 +44,8 @@ Controllable Label Error Fixing: [Re-Label By Data Pattern For Controllable Deep
 
 Apply To LLMs: [Simple Self-Eval-Drop for Leveraging LLMs](https://www.techrxiv.org/users/679328/articles/1221820), [Drop Noise For Cleaning LLMs Data](https://www.techrxiv.org/users/679328/articles/1256798)
 
+Using LLMs To Re-Label: [A Unified Framework for NLP Tasks by ReLabel Method](https://www.techrxiv.org/users/679328/articles/1353479)
+
 # More Info
 
 The methods proposed in this project (and its related works) can be applied to all manually annotated (or dataset by LLMs) machine learning / deep learning tasks. 
